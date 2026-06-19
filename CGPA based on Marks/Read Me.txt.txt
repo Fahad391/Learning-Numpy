@@ -1,0 +1,89 @@
+# CGPA Calculator
+
+A Python program that calculates cumulative GPA based on course marks, credits, and grade point mappings.
+
+What It Does
+
+- Takes user input for multiple courses (name, credit hours, marks)
+- Validates all inputs (marks 0-100, credits > 0, no blank names)
+- Maps marks to CGPA using predefined grade scales
+- Calculates weighted points per course
+- Outputs overall CGPA
+
+
+Input Example
+
+```
+Total Courses: 3
+Course 1: Mathematics
+Course Credit: 3
+Marks in Mathematics: 85
+Course 2: Physics
+Course Credit: 4
+Marks in Physics: 92
+Course 3: Chemistry
+Course Credit: 3
+Marks in Chemistry: 78
+```
+
+### Output Example
+
+```
+Courses: ['Mathematics' 'Physics' 'Chemistry']
+Credits: [3 4 3]
+Marks: [85.0 92.0 78.0]
+
+Points Each course: [9.75 15.00 7.50]
+
+Overall CGPA: 3.41
+```
+
+## Grade Mapping
+
+| Marks Range | CGPA |
+|------------|------|
+| < 50       | 0.00 |
+| 50-59      | 2.25 |
+| 60-64      | 2.50 |
+| 65-69      | 2.75 |
+| 70-74      | 3.00 |
+| 75-79      | 3.25 |
+| 80-84      | 3.50 |
+| 85-89      | 3.75 |
+| ≥ 90       | 4.00 |
+
+ Validation
+
+- Course Name: Cannot be blank
+- Credit: Must be positive integer (> 0)
+- Marks: Must be between 0 and 100
+- Number of Courses: Must be at least 1
+
+Invalid input raises a ValueError with a specific error message.
+
+Error Handling
+
+- ValueError — Invalid input (marks out of range, blank name, non-positive credit, zero courses)
+- TypeError — Wrong data type (shouldn't occur with proper input)
+- ZeroDivisionError — Division by zero in CGPA calculation (safety net; shouldn't trigger)
+
+Technical Details
+
+- Language: Python
+- Dependencies: NumPy
+- Data Structure: NumPy arrays for efficient computation
+
+ About This Code
+
+This is a learning project to understand NumPy fundamentals:
+- Array creation and data types
+- Boolean indexing and filtering
+- Conditional operations (`np.select()`)
+- Array aggregation (`sum()`, `mean()`)
+- Broadcasting
+
+The code was written independently, then debugged and reviewed for logic correctness and error handling practices.
+
+
+
+Self-taught practice project as part of Python learning roadmap.
